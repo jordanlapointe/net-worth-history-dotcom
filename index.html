@@ -24,7 +24,6 @@
         }
       }
       body {
-        background-image: url(assets/desktop.jpg);
         background-position: center;
         background-size: cover;
         color: white;
@@ -32,13 +31,32 @@
         margin: 0;
         text-align: center;
       }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-image: url(assets/desktop-dark.jpg);
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background-image: url(assets/desktop-light.jpg);
+        }
+      }
       html {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAACKADAAQAAAABAAAACAAAAACVhHtSAAAA2UlEQVQYGSXOz0oCURTH8e+5f2bQi5MyZWpELWqTEK0CcdNj9BS9S4/WOgiLiIHUBAnJmnu8Y4vf2fzODz7SK67V2hyft7Euw5oMMR5rM5z1uP7VLb+2Zvs5J66/UymYFNAUcHf9MbPDkvnNluL5idHsheXfD28xEiUij8OpLssLFoMz3genhCxwUlWE1YLNqkIe8nMNDkbdNiYc8dob81Fe0vFDjDjk3hxrjZDlcOANhW/hbWDjWqx9F5mYjqomlGhaJOA+DTEZ6oj7kjqVe/D/afCq6aEZwQ6tlD5AFQGS8wAAAABJRU5ErkJggg==);
         background-position: center;
         background-size: cover;
       }
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAABqADAAQAAAABAAAABgAAAABrkD2lAAAAiElEQVQIHR2EwQqCQBQA5+0+TSMNpY7dukR46Vj3+oD+oz/tHkGnIDCyQILY0DZxhhnJ85UPbITVGBsOCWxIoBFabPaU+qW9nEhfT2oxNL5Bd+cjt9mCcrlm9HbEjwpXV8hhMPNppIyzKfdJgUvnGEmQrWT+J0KonsRajFE+BOjVOHpa8F3de/+5rSiOiJo+qwAAAABJRU5ErkJggg==);
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        html {
+          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAABqADAAQAAAABAAAABgAAAABrkD2lAAAAmElEQVQIHQ3Kuw7BYBiA4fdrSxMVBNVIWhvpZjS6DLfBZLW6CXdksDGJRCJalZ6cDz/P/MhkqVSU3UhPEUF4Zh/GhOcYfaGZM/e4IyxZpKZFkN9J8gcS9EbK9q4kbpWD32XtOaw0B5n3p2qQXekULzRqCZX2BVoa4g/HyjHKVD8azbdQ/z6xHxnG5pOxlRe6YSAFQfhvy+QHNk44cJqd01IAAAAASUVORK5CYII=);
+        }
+      }
       h1 {
-        color: hsl(47, 10%, 95%);
+        color: hsl(47, 10%, 92%);
         letter-spacing: -0.03em;
         margin-bottom: 0;
         margin-top: 0;
@@ -180,7 +198,13 @@
         </ul>
       </div>
     </div>
-    <img src="assets/app.png" height="792" width="1136" />
+    <picture>
+      <source
+        srcset="assets/app-dark.png"
+        media="(prefers-color-scheme: dark)"
+      />
+      <img src="assets/app-light.png" height="792" width="1136" />
+    </picture>
     <div class="pb-4 pt-4">
       <div>
         <img src="assets/app-icon.png" width="84" />
