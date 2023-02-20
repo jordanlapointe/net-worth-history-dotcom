@@ -13,40 +13,62 @@
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --page-color-heading: black;
-          --page-color-text: black;
+          --color-background: #16181b;
+          --color-text: #f8f9fa;
+          --color-link: #4da3ff;
         }
       }
-      @media (prefers-color-scheme: light) {
+      @media (prefers-color-scheme: light),
+        (prefers-color-scheme: no-preference) {
         :root {
-          --page-color-heading: white;
-          --page-color-text: black;
+          --color-background: #fff;
+          --color-text: #16181b;
+          --color-link: #007bff;
         }
+      }
+      a {
+        color: var(--color-link);
       }
       a:not(:focus, :hover) {
         text-decoration: none;
       }
       body {
+        background-color: var(--color-background);
+        color: var(--color-text);
         font-family: var(--page-font-sans);
         margin: 0;
         text-align: center;
       }
       h1 {
-        font-size: 36px;
+        font-size: 2rem;
         margin-bottom: 0;
         margin-top: 0;
-        line-height: 48px;
+        line-height: 2rem;
+      }
+      small {
+        font-size: 0.8em;
       }
     </style>
   </head>
   <body>
-    <div>
-      <h1 style="margin-top: 16px">Net Worth History</h1>
-      <div>
-        <p>A desktop app for Windows, Mac & Linux</p>
-        <a href="download.html">Download ›</a>
-      </div>
-    </div>
-    <img src="assets/app.png" height="875" width="1370" />
+    <h1 style="margin-top: 1.5rem">Net Worth History</h1>
+    <p>A desktop app for Windows, Mac & Linux</p>
+    <a href="download.html">Download ›</a>
+    <picture>
+      <source
+        srcset="assets/app-dark.png"
+        media="(prefers-color-scheme: dark)"
+      />
+      <img
+        style="max-width: 1552px; min-width: 600px; width: 100%"
+        src="assets/app-light.png"
+      />
+    </picture>
+    <p style="margin-bottom: 1.5rem">
+      <small>
+        Open source on
+        <a href="https://github.com/jordanlapointe/net-worth-history">GitHub</a>
+      </small>
+    </p>
   </body>
 </html>
